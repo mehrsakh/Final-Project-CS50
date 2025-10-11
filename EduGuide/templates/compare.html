@@ -1,0 +1,44 @@
+{% extends "home.html" %}
+{% block content %}
+<h2>Compare Majors</h2>
+<form method="POST">
+    <label>Major 1:</label>
+    <select name="major1" required>
+        <option value="">--Select--</option>
+        {% for m in majors %}<option value="{{ m }}">{{ m }}</option>{% endfor %}
+    </select>
+    <label>Score 1 (0-100):</label>
+    <input type="number" name="score1" min="0" max="100" value="0" required>
+
+    <label>Major 2:</label>
+    <select name="major2" required>
+        <option value="">--Select--</option>
+        {% for m in majors %}<option value="{{ m }}">{{ m }}</option>{% endfor %}
+    </select>
+    <label>Score 2 (0-100):</label>
+    <input type="number" name="score2" min="0" max="100" value="0" required>
+
+    <button type="submit">Compare</button>
+</form>
+
+{% if result %}<p>{{ result }}</p>{% endif %}
+
+{% if compare_data %}
+<div class="compare-container">
+    {% for major, data in compare_data.items() %}
+        <div class="compare-box">
+            <h3>{{ major }}</h3>
+            <p><strong>Description:</strong> {{ data.description }}</p>
+            <p><strong>Duration:</strong> {{ data.duration }}</p>
+            <p><strong>Difficulty:</strong> {{ data.difficulty }}</p>
+            <p><strong>Job:</strong> {{ data.job_market }}</p>
+            <p><strong>Salary:</strong> {{ data.salary }}</p>
+            <p><strong>Match:</strong> {{ data.match }}%</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

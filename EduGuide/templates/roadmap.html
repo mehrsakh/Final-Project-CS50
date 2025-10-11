@@ -1,0 +1,12 @@
+{% extends "home.html" %}
+{% block content %}
+<h2>Roadmaps</h2>
+{% for major, steps in roadmaps.items() %}
+    <h3>{{ major }}</h3>
+    <ul>
+        {% for step in steps %}
+            <li>{{ step }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock %}

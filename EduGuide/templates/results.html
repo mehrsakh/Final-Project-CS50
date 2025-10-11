@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block content %}
+<h2>Hi {{ username }}!</h2>
+<p>Your suggested major: <strong>{{ major }}</strong></p>
+<p>Match: <strong>{{ match }}%</strong></p>
+<br>
+<br>
+<div class="next-steps">
+    <a href="{{ url_for('scholarship') }}" class="btn-link">Scholarship</a>
+    <br>
+    <br>
+    <a href="{{ url_for('roadmap') }}" class="btn-link">Roadmap</a>
+
+</div>
+{% endblock %}

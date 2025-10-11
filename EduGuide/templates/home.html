@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EduGuide</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="page-wrapper">
+<header>
+    <h2>EduGuide</h2>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('compare') }}">Compare</a>
+        <a href="{{ url_for('roadmap') }}">Roadmap</a>
+        <a href="{{ url_for('scholarship') }}">Scholarship</a>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 EduGuide | All rights reserved</p>
+</footer>
+</div>
+</body>
+</html>

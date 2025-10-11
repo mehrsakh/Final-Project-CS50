@@ -1,0 +1,14 @@
+{% extends "home.html" %}
+{% block content %}
+<h2>Hello, {{ username }}!</h2>
+<p>Choose your high school track:</p>
+<form method="POST">
+    <select name="track" required>
+        <option value="">--Select Track--</option>
+        <option value="Science">Science</option>
+        <option value="Math">Math</option>
+        <option value="Humanities">Humanities</option>
+    </select>
+    <button type="submit">Next</button>
+</form>
+{% endblock %}

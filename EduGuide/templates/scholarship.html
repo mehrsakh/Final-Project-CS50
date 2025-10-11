@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% block content %}
+<h2>Scholarship Check</h2>
+<form method="POST">
+    <label>GPA (0-20):</label>
+    <input type="number" name="gpa" min="0" max="20" step="0.1" required>
+    <label>English Level:</label>
+    <select name="english" required>
+        <option value="">--Select--</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+    </select>
+    <button type="submit">Check</button>
+</form>
+{% if result %}<p>{{ result }}</p>{% endif %}
+{% endblock %}

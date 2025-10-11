@@ -1,0 +1,24 @@
+
+
+{% extends "home.html" %}
+{% block content %}
+<h2>Welcome!</h2>
+ <p>
+        EduGuide is your personal education companion designed to help you discover
+        the academic path that best suits your interests, strengths, and future goals.
+        By answering a simple quiz about your high school track and your preferences,
+        you'll receive a tailored suggestion for a major that aligns with your skills
+        and passions.
+    </p>
+    <p>
+        After completing the quiz, you can explore your potential acceptance probability
+        in different programs and view a detailed roadmap outlining the courses and milestones
+        for your chosen path. Whether you are interested in Science, Math, or Humanities,
+        EduGuide guides you step by step toward your educational success.
+    </p>
+<p>Enter your name:</p>
+<form method="POST">
+    <input type="text" name="username" placeholder="Your Name" required>
+    <button type="submit">Start</button>
+</form>
+{% endblock %}
